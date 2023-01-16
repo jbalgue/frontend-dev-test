@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Frontend Mentor | Intro section with dropdown navigation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="stylesheet" href="./styles/css-reset.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Epilogue:500,700">
+  <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body>
+  <div class="mobile-overlay"></div>
+  <nav>
+    <div>
+      <img src="assets/logo.svg" alt="snap-logo">
+    </div>
+    <div class="hamburger-menu" onclick="Main.hamburgerMenuOnClick(this)"></div>
+    <div class="nav-menu">
+      <div class="dropdown" onclick="Main.dropdownOnClick(this, 'features')">
+        <a href="#" class="nav-link caret">Features</a>
+        <div class="dropdown-content">
+          <a href="#"><img src="assets/icon-todo.svg" alt=""/>Todo List</a>
+          <a href="#"><img src="assets/icon-calendar.svg" alt=""/>Calendar</a>
+          <a href="#"><img src="assets/icon-reminders.svg" alt=""/>Reminders</a>
+          <a href="#"><img src="assets/icon-planning.svg" alt=""/>Planning</a>
+        </div>
+      </div>
+      <div class="dropdown" onclick="Main.dropdownOnClick(this, 'company')">
+        <a href="#" class="nav-link caret">Company</a>
+        <div class="dropdown-content">
+          <a href="#">History</a>
+          <a href="#">Our Team</a>
+          <a href="#">Blog</a>
+        </div>
+      </div>
+      <a href="#" class="nav-link">Careers</a>
+      <a href="#" class="nav-link">About</a>
+      <div class="nav-menu-right">
+        <a href="#" class="nav-link">Login</a>
+        <a href="#" class="btn btn-small">Register</a>
+      </div>
+    </div>
+  </nav>
+  
+  <main>
+    <section>
+      <div class="info-section">
+        <h1>Make remote work</h1>
+        <p>Get your team in sync, no matter your location.
+          Streamline processes, create team rituals, and watch productivity soar.
+        </p>
+        <div class="learn-more-btn">
+          <a href="#" class="btn btn-large-black">Learn more</a>
+        </div>
+        <div class="client-logos">
+          <div>
+            <img src="assets/client-databiz.svg" alt=""/>
+          </div>
+          <div>
+            <img src="assets/client-audiophile.svg" alt=""/>
+          </div>
+          <div>
+            <img src="assets/client-meet.svg" alt=""/>
+          </div>
+          <div>
+            <img src="assets/client-maker.svg" alt=""/>
+          </div>
+        </div>
+      </div>
+      <div class="hero-img">&nbsp;</div>
+    </section>
+  </main>
+</body>
+</html>
+
+<script src="js/main.js"></script>

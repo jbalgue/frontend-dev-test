@@ -1,0 +1,345 @@
+html {
+  /* https://matthewjamestaylor.com/responsive-font-size */
+  font-size: calc(12px + 0.390625vw);
+}
+
+body {
+  font-family: Epilogue;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.4rem 1.4rem 0;
+  font-size: 0.9rem;
+}
+
+a, p {
+  color: hsl(0, 0%, 41%)
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: hsl(0, 0%, 8%)
+}
+
+.nav-menu {
+  display: flex;
+  flex-grow: 1;
+  font-weight: 500;
+}
+
+.nav-menu > div:first-child > a:first-child {
+  /* padding-left: 60px; */
+  padding-left: 4.5vw;
+}
+
+.nav-menu-right {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nav-menu .nav-link, .nav-menu-right a:first-child {
+  /* padding-right: 30px; */
+  padding-right: 2.5vw;
+}
+
+.btn {
+  border-radius: 10px;
+  border: 1px hsl(0, 0%, 41%) solid;
+}
+.btn-small {
+  padding: 0.6em 0.9em;
+}
+
+.btn-large-black {
+  /* padding: 16px 23px; */
+  padding: 0.8em 1.2em;
+  color: hsl(0, 0%, 98%);
+  background: hsl(0, 0%, 8%);
+  font-weight: 700;
+}
+
+.btn-large-black:hover {
+  background:hsl(0, 0%, 98%);
+}
+
+.dropdown-content {
+  display: none;
+  /* display: block; */
+  position: absolute;
+  min-width: 124px;
+  z-index: 1;
+  background-color: #fff;
+  top: 47px;
+  box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+  border: 1px #fff solid;
+  border-radius: 10px;
+}
+
+.dropdown-content img {
+  margin-right: 14px;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 0 18px 18px 18px;
+}
+
+.dropdown-content a:first-child {
+  padding-top: 18px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown .nav-link.caret::after {
+  content: url('../assets/icon-arrow-down.svg');
+  margin-left: 0.4em;
+}
+
+.dropdown:hover .nav-link.caret::after {
+  content: url('../assets/icon-arrow-up.svg');
+}
+
+section {
+  display: flex;
+  padding: 5rem;
+  justify-content: space-around;
+}
+
+.info-section {
+  padding: 3.7rem 0 0 3.7rem;
+}
+
+h1 {
+  font-size: 4.5rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  max-width: 77%;
+  margin-bottom: 2rem;
+}
+
+p {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 28px;
+  max-width: 62%;
+}
+
+.learn-more-btn {
+  margin-top: 3.5em;
+}
+
+.client-logos {
+  margin-top: 6.5em;
+  display: flex;
+  justify-content: space-between;
+  max-width: 70%;
+  flex-wrap: wrap;
+}
+
+.hero-img {
+  background: url("../assets/image-hero-desktop.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 60%;
+}
+
+.hamburger-menu {
+  display: none;
+}
+
+.mobile-overlay {
+  display: none;
+}
+
+/* Desktop */
+@media screen and (max-width: 1200px) {
+  .hero-img {
+    width: 100%;
+    background-position: top;
+  }
+}
+
+/* Laptop */
+@media screen and (max-width: 992px), (orientation: landscape) {
+  .nav-menu {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+/* Tablet */
+@media screen and (max-width: 768px) {
+  .nav-menu {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+/* Mobile */
+@media screen and (min-width: 577px) {
+  .nav-menu {
+    display: flex;
+  }
+}
+@media screen and (max-width: 576px), (max-width: 768px) {
+  nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem;
+
+    /* Variables */
+    --hamburger-icon: url('../assets/icon-menu.svg');
+    --caret-icon: url('../assets/icon-arrow-down.svg');
+  }
+
+  .nav-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    width: 70vw;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    padding: 1em 1em;
+    font-size: 1.2rem;
+  }
+
+  .nav-menu > div.dropdown:first-child > a:first-child {
+    padding: 0;
+  }
+
+  .nav-menu div.dropdown:first-child {
+    margin-top: 4em;
+  }
+
+  .nav-menu .dropdown {
+    margin-bottom: 1em;
+  }
+
+  .nav-menu a.nav-link {
+    display: block;
+    margin-bottom: 1em;
+  }
+
+  .dropdown .nav-link.caret::after {
+    content: var(--caret-icon) !important;
+    margin-left: 0.4em;
+  }
+
+  .nav-menu .dropdown .dropdown-content {
+    position: relative;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    top: 0;
+    left: 0;
+    min-width: unset;
+  }
+
+  .dropdown-content a:first-child {
+    padding-top: 0.5em;
+  }
+
+  .nav-menu .nav-link {
+    padding: 0;
+  }
+
+  .nav-menu-right {
+    padding: 1em 1em;
+    font-size: 1rem;
+    text-align: center;
+    align-items: stretch;
+  }
+
+  .nav-menu-right a {
+    display: block;
+    margin: 0;
+  }
+
+  .btn-small {
+    padding: 0.8em 0.8em;
+    margin-top: 1em;
+  }
+
+  .nav-menu, .nav-menu-right {
+    flex-direction: column;
+  }
+
+  .hamburger-menu {
+    display: block;
+    z-index: 1;
+  }
+
+  .hamburger-menu::after {
+    content: var(--hamburger-icon);
+  }
+
+  section {
+    display: flex;
+    padding: 0;
+    flex-direction: column;
+    gap: 2.8em;
+  }
+
+  .info-section {
+    text-align: center;
+    padding: 1.2rem;
+  }
+
+  h1 {
+    font-size: 2.3rem;
+    max-width: unset;
+  }
+
+  p {
+    font-size: 1.2rem;
+    max-width: unset;
+  }
+
+  .learn-more-btn {
+    margin-top: 2.5em;
+  }
+
+  .client-logos {
+    max-width: unset;
+    flex-wrap: nowrap;
+    margin-top: 4.5em;
+    margin-bottom: 2.5em;
+  }
+
+  .client-logos img {
+    width: 75%;
+  }
+
+  .hero-img {
+    background: url("../assets/image-hero-mobile.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 100%;
+    min-height: 282px;
+    min-width: unset;
+    display: flex;
+    order: -1;
+  }
+
+  .mobile-overlay {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    opacity: 0.5;
+  }
+}/* mobile */
